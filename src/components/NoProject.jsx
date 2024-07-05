@@ -7,7 +7,7 @@ export default function NoProject() {
             <img src={noproject} alt="" className='w-20 bg-none '/>
             <h1 className='text-2xl text-[#625f5c] font-bold'>No Project Selected</h1>
             <h2 className='text-[#9a9692]'>Select a project or get started with a new one</h2>
-            <Button text="Create new project" bgColor="#100e0c" textColor="#9a9692"></Button>
+            <Button text="Create new project" bgColor=" bg-[#100e0c] " textColor=" text-[#9a9692] "></Button>
         </div>
     )
 }
