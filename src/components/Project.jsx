@@ -2,13 +2,9 @@ import Button from "./Button"
 import Input from "./Input"
 import TaskList from "./TaskList"
 
-export default function Project({header, description, date, taskList}) {
+export default function Project({id, title, description, date, taskList}) {
     return (
         <div className=" m-8 mt-20 flex flex-col w-full max-w-4xl min-h-screen gap-5">
-            {/* <div className="self-end">
-                <Button text="Cancel" textColor=" text-[#0e0e0e] "></Button>
-                <Button text="Save" bgColor=" bg-[#100e0c] " textColor=" text-[#ffff] "></Button>
-            </div> */}
             <div className="flex flex-row justify-between items-center">
                 <h1 className="text-4xl font-bold">Mastering React</h1>
                 <Button text="Delete"></Button>
@@ -24,10 +20,6 @@ export default function Project({header, description, date, taskList}) {
             </div>
 
             <TaskList></TaskList>
-            {/* <Input field="Description" type="textarea"></Input>
-            <Input field="Due Date" type="date"></Input> */}
-            {/* <h1 className='text-2xl text-[#625f5c] font-bold'>No Project Selected</h1>
-            <h2 className='text-[#9a9692]'>Select a project or get started with a new one</h2> */}
         </div>
     )
 }
