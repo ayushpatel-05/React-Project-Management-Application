@@ -1,6 +1,6 @@
 import TaskItem from "./TaskItem"
 
-export default function TaskList({}) {
+export default function TaskList({taskList}) {
     return (
         <ul className="bg-[#e1dfdd] px-4 py-10">
             <TaskItem>Learn the basics</TaskItem>

@@ -9,13 +9,13 @@ const data = [{
     date: 'July 5, 2024'
 }]
 
-export default function Content({createProject, currentProject}) {
+export default function Content({createProject, currentProject, updateTaskList}) {
     console.log(currentProject);
     return (
             <>
                 {currentProject == -2 ? <NoProject/> : null}
                 {currentProject == -1 ? <CreateProject createProject={createProject}/> : null}
-                {(currentProject != -1 && currentProject != -2) ? <Project {...currentProject}/> : null}
+                {(currentProject != -1 && currentProject != -2) ? <Project {...currentProject} {...{updateTaskList}}/> : null}
             </>
     )
 }

@@ -7,8 +7,9 @@ export default function SideBar({projectTitleList, switchProject, currentProject
             <h1 className="text-2xl font-bold">YOUR PROJECTS</h1>
             <Button text="+ Add Project" bgColor=" bg-[#322e2a] " textColor="text-[#9a9692]"></Button>
             <ul>
-                {projectTitleList.map((projectTitle, index) => {
-                    return <ProjectListItem projectName={projectTitle} isSelected={index==currentProject} key={index}></ProjectListItem>
+                {projectTitleList.map((project, index) => {
+                    {console.log(project.id);}
+                    return <ProjectListItem projectName={project.title} isSelected={index==currentProject} key={project.id} switchProject={switchProject}></ProjectListItem>
                 })}
                 {/* <ProjectListItem projectName="Learning React" isSelected={true} ></ProjectListItem>
                 <ProjectListItem projectName="Mastering React" isSelected={false}></ProjectListItem> */}
