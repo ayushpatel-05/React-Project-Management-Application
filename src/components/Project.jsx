@@ -3,7 +3,7 @@ import { useState } from "react"
 import Input from "./Input"
 import TaskList from "./TaskList"
 
-export default function Project({id, title, description, date, taskList, updateTaskList, deleteTask}) {
+export default function Project({id, title, description, date, taskList, updateTaskList, deleteTask, deleteProject}) {
     const [task, setTask] = useState("");
 
     function handelUpdateTask(e) {
@@ -15,7 +15,7 @@ export default function Project({id, title, description, date, taskList, updateT
         <div className=" m-8 mt-20 flex flex-col w-full max-w-4xl min-h-screen gap-5">
             <div className="flex flex-row justify-between items-center">
                 <h1 className="text-4xl font-bold">Mastering React</h1>
-                <Button text="Delete"></Button>
+                <Button handelClick={deleteProject} text="Delete"></Button>
             </div>
             <p className="">July 5, 2024</p>
             <p className="whitespace-pre-line">{description}</p>

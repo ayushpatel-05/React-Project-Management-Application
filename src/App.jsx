@@ -36,6 +36,16 @@ function App() {
     })
   };
 
+  function handelProjectDeletion() {
+    setProjectList((prevState) => {
+      let updatedProjectList = structuredClone(prevState);
+      const index = updatedProjectList.findIndex(project => project.id == currentProject);
+      updatedProjectList = updatedProjectList.filter(project => project.id != currentProject);
+      return updatedProjectList;
+    });
+    setCurrentProject(-2);
+  }
+
   function handelProjectSwitch(projectId) {
     console.log("ProjectID: ",projectId);
     setCurrentProject(projectId);
@@ -75,9 +85,11 @@ function App() {
       <div className="flex">
       <SideBar projectTitleList={projectTitleList} switchProject={handelProjectSwitch} currentProject={currentProject}></SideBar>
       <Content createProject={handelProjectCreation} 
+      deleteProject={handelProjectDeletion}
       currentProject={(currentProject!= -1 && currentProject != -2) ? currentProjectObj : currentProject}
       updateTaskList={handelProjectTaskUpdation}
-      deleteTask={handelProjectTaskDeletion}/>
+      deleteTask={handelProjectTaskDeletion}
+      switchProject={handelProjectSwitch}/>
       </div>
     </>
   );
