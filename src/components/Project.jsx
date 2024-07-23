@@ -14,16 +14,16 @@ export default function Project({id, title, description, date, taskList, updateT
     return (
         <div className=" m-8 mt-20 flex flex-col w-full max-w-4xl min-h-screen gap-5">
             <div className="flex flex-row justify-between items-center">
-                <h1 className="text-4xl font-bold">Mastering React</h1>
+                <h1 className="text-4xl font-bold">{title}</h1>
                 <Button handelClick={deleteProject} text="Delete"></Button>
             </div>
-            <p className="">July 5, 2024</p>
+            <p className="">{date}</p>
             <p className="whitespace-pre-line">{description}</p>
             <hr className="bg-[#ceccca] h-1"></hr>
 
             <h1 className="font-bold text-3xl">Tasks</h1>
             <div className="flex gap-1">
-                <input onChange={handelUpdateTask} type="text" className="bg-[#e1dfdd] w-72 px-2 focus:outline-blue-700"/>
+                <input value={task} onChange={handelUpdateTask} type="text" className="bg-[#e1dfdd] w-72 px-2 focus:outline-blue-700"/>
                 <Button handelClick={updateTaskList} parameter={task} text="Add Task"></Button>
             </div>
 
