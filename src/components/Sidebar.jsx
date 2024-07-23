@@ -9,7 +9,7 @@ export default function SideBar({projectTitleList, switchProject, currentProject
             <ul>
                 {projectTitleList.map((project, index) => {
                     {console.log(project.id);}
-                    return <ProjectListItem projectName={project.title} isSelected={index==currentProject} key={project.id} switchProject={switchProject}></ProjectListItem>
+                    return <ProjectListItem projectName={project.title} isSelected={index==currentProject} id={project.id} switchProject={switchProject}></ProjectListItem>
                 })}
                 {/* <ProjectListItem projectName="Learning React" isSelected={true} ></ProjectListItem>
                 <ProjectListItem projectName="Mastering React" isSelected={false}></ProjectListItem> */}

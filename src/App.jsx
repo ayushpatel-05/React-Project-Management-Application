@@ -58,6 +58,15 @@ function App() {
     })
   }
 
+  function handelProjectTaskDeletion(id) {
+    setProjectList((oldProjectList) => {
+        const newObj = structuredClone(oldProjectList);
+        const index = oldProjectList.findIndex(project => project.id == currentProject);
+        newObj[index].taskList = newObj[index].taskList.filter(taskObj => taskObj.id != id);
+        return newObj;
+    })
+  }
+
   const currentProjectObj = projectList.find(project => project.id == currentProject);
 
   return (
@@ -66,8 +75,9 @@ function App() {
       <div className="flex">
       <SideBar projectTitleList={projectTitleList} switchProject={handelProjectSwitch} currentProject={currentProject}></SideBar>
       <Content createProject={handelProjectCreation} 
-      currentProject={currentProject>=0 ? currentProjectObj : currentProject}
-      updateTaskList={handelProjectTaskUpdation}/>
+      currentProject={(currentProject!= -1 && currentProject != -2) ? currentProjectObj : currentProject}
+      updateTaskList={handelProjectTaskUpdation}
+      deleteTask={handelProjectTaskDeletion}/>
       </div>
     </>
   );

@@ -3,7 +3,7 @@ import { useState } from "react"
 import Input from "./Input"
 import TaskList from "./TaskList"
 
-export default function Project({id, title, description, date, taskList, updateTaskList}) {
+export default function Project({id, title, description, date, taskList, updateTaskList, deleteTask}) {
     const [task, setTask] = useState("");
 
     function handelUpdateTask(e) {
@@ -27,7 +27,7 @@ export default function Project({id, title, description, date, taskList, updateT
                 <Button handelClick={updateTaskList} parameter={task} text="Add Task"></Button>
             </div>
 
-            <TaskList taskList={taskList}></TaskList>
+            <TaskList taskList={taskList} {...{deleteTask}}></TaskList>
         </div>
     )
 }
